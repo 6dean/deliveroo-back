@@ -22,6 +22,10 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.all("*", (req, res) => {
+  res.status(404).json({ message: "This route doesn't exist" });
+});
+
 const PORT = 3100;
 app.listen(3100, () => {
   console.log("Serveur on fire on port " + PORT + " ! 🔥🔥🔥🔥🔥🔥");
