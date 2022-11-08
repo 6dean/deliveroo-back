@@ -26,7 +26,7 @@ app.all("*", (req, res) => {
   res.status(404).json({ message: "This route doesn't exist" });
 });
 
-const PORT = 3100;
-app.listen(3100, () => {
+const PORT = process.env || 3100;
+app.listen(PORT, () => {
   console.log("Serveur on fire on port " + PORT + " ! 🔥🔥🔥🔥🔥🔥");
 });
